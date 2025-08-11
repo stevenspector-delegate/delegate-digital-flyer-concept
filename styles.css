@@ -37,7 +37,6 @@ body.dark {
 }
 
 .page {
-  /* slightly narrower than before */
   max-width: 1120px;
   background: white;
   border-radius: 16px;
@@ -82,7 +81,7 @@ body.dark header p { color: #c9d8dd; }
 /* --- Card grid: 1 col (phones) → 2 cols (tablets) → 3 cols (desktop) --- */
 .values {
   display: grid;
-  gap: 24px; /* slightly tighter gap */
+  gap: 24px;
   margin-bottom: 50px;
   grid-template-columns: 1fr;             /* phones */
 }

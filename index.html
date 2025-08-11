@@ -7,21 +7,31 @@
 
 <link rel="icon" type="image/png" href="resources/Delegate_icon.png">
 
+<!-- Ensure browsers don't restore scroll on reload/back -->
+<script>
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+</script>
+
+<!-- Inter Tight + Inter -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="intro-active">
 <button class="theme-toggle">🌙 Toggle Dark Theme</button>
 
 <div class="page">
   <header>
+    <!-- Same node used in intro animation -->
     <a href="https://delegate.team/" target="_blank" rel="noopener" class="main-logo-link" aria-label="Visit delegate.team">
       <img id="main-logo" class="main-logo fade-swap" src="resources/Delegate_logo_large.svg" alt="Delegate Logo">
     </a>
 
+    <!-- Same node used in intro animation -->
     <h1>Experience the difference.</h1>
 
     <p>We embed with your team to own outcomes, relieve pressure, and bring expertise — solving problems before they become problems.</p>
@@ -56,6 +66,21 @@
       <div class="testimonial">“What we like is that they have really good, skilled developers who also have good interpersonal skills. They know not just what we need done but why and how to do it in a better way.”
         <em>— Jace Gentil, Director, Global Business Operations @ Probo Medical</em>
       </div>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section class="video">
+    <h3 class="video-title">Don’t just take it from us — listen to what our clients have to say.</h3>
+    <div class="video-embed video-reveal" data-animate>
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/hetBNgtKizw?rel=0"
+        title="Delegate — Experience the Difference"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
     </div>
   </section>
 

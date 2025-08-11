@@ -10,13 +10,16 @@
 
 <link rel="stylesheet" href="styles.css">
 </head>
-<body class="dark">
-<button class="theme-toggle">☀️ Toggle Light Theme</button>
+<body>
+<button class="theme-toggle">🌙 Toggle Dark Theme</button>
 
 <div class="page">
   <header>
-    <!-- Top logo (swaps file with theme) -->
-    <img id="main-logo" class="main-logo fade-swap" src="resources/Delegate_logo_all_white.png" alt="Delegate Logo">
+    <!-- Clickable logo (opens delegate.team in new tab).
+         JS still swaps: SVG in light mode, white PNG in dark mode. -->
+    <a href="https://delegate.team/" target="_blank" rel="noopener" class="main-logo-link" aria-label="Visit delegate.team">
+      <img id="main-logo" class="main-logo fade-swap" src="resources/Delegate_logo_large.svg" alt="Delegate Logo">
+    </a>
 
     <!-- Static headline -->
     <h1>Experience the difference.</h1>

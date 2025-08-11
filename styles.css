@@ -1,0 +1,184 @@
+:root {
+  --teal: #4FB3BF;
+  --cyan: #A7E3E8;
+  --gold: #FFD66B;
+  --gold-dark: #E1B847;
+  --orange: #FFB799;
+  --orange-dark: #E28A67;
+  --relief-dark: #FFB799;
+  --relief-light: #E86E4F;
+  --ownership-dark: #4FB3BF;
+  --ownership-light: #007E8A;
+  --expertise-dark: #FFD66B;
+  --expertise-light: #C39A06;
+  --bg-light: #F7FAFB;
+  --bg-dark: #1E2B2F;
+  --text-light: #F7FAFB;
+  --text-dark: #003340;
+  font-family: 'Inter', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.page {
+  /* slightly narrower than before */
+  max-width: 1120px;
+  background: white;
+  border-radius: 16px;
+  padding: 48px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark .page { background: #2A3A3F; }
+
+header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.main-logo {
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Smooth fade for logo swap */
+.fade-swap { transition: opacity 0.3s ease-in-out; }
+.fade-out  { opacity: 0; }
+
+header h1 {
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.15rem;
+  color: #375d66;
+  margin: 12px 0 0 0;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.dark header p { color: #c9d8dd; }
+
+/* --- Card grid: 1 col (phones) → 2 cols (tablets) → 3 cols (desktop) --- */
+.values {
+  display: grid;
+  gap: 24px; /* slightly tighter gap */
+  margin-bottom: 50px;
+  grid-template-columns: 1fr;             /* phones */
+}
+
+@media (min-width: 700px) {
+  .values { grid-template-columns: repeat(2, 1fr); }  /* tablets */
+}
+
+@media (min-width: 1080px) {
+  .values { grid-template-columns: repeat(3, 1fr); }  /* desktop: always 3-up */
+}
+
+.value {
+  border-radius: 12px;
+  padding: 28px;
+  transition: transform 0.25s ease, background 0.3s, color 0.3s;
+}
+
+.value:hover { transform: translateY(-6px); }
+
+.value.ownership { background: rgba(0, 126, 138, 0.08); }
+.value.relief    { background: rgba(232, 110, 79, 0.1); }
+.value.expertise { background: rgba(195, 154, 6, 0.1); }
+
+body.dark .value.ownership { background: rgba(79, 179, 191, 0.15); }
+body.dark .value.relief    { background: rgba(255, 183, 153, 0.15); }
+body.dark .value.expertise { background: rgba(255, 214, 107, 0.15); }
+
+.value h2 { margin: 0 0 8px; font-size: 1.35rem; }
+
+.value.ownership h2 { color: var(--ownership-light); }
+.value.relief h2    { color: var(--relief-light); }
+.value.expertise h2 { color: var(--expertise-light); }
+
+body.dark .value.ownership h2 { color: var(--ownership-dark); }
+body.dark .value.relief h2    { color: var(--relief-dark); }
+body.dark .value.expertise h2 { color: var(--expertise-dark); }
+
+.tagline {
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 14px;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.value p { margin: 0 0 12px; font-size: 0.96rem; color: #3a5057; }
+
+.value .pain { font-style: italic; color: #2c3f44; margin-top: 16px; }
+
+body.dark .value p { color: #d0dee3; }
+body.dark .value .pain { color: #a9b6ba; }
+
+.testimonial {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #445a5f;
+}
+
+.testimonial em {
+  display: block;
+  margin-top: 6px;
+  font-style: normal;
+  font-weight: normal;
+}
+
+body.dark .testimonial {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  color: #b7cdd0;
+}
+
+.cta { text-align: center; }
+
+.cta a {
+  display: inline-block;
+  padding: 14px 28px;
+  background: var(--teal);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 14px;
+  background: var(--teal);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}

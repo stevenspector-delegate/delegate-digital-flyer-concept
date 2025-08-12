@@ -105,16 +105,39 @@ body.dark .value.expertise h2 { color: var(--expertise-dark); }
 body.dark .value p { color: #d0dee3; }
 body.dark .value .pain { color: #a9b6ba; }
 
+/* Quote block with vertical accent line */
+/* Quote block with vertical accent line — aligned to first line */
 .testimonial {
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px solid rgba(0,0,0,0.06);
-  font-weight: 600;
+  margin-top: 18px;                 /* spacing above the block */
+  padding: 0 16px 0 18px;           /* no top padding so the line starts with the text */
+  border-left: 4px solid var(--teal);
+  background: transparent;
+  font-weight: 500;
   font-size: 0.95rem;
-  color: #445a5f;
+  line-height: 1.55;
+  color: #3a5057;
 }
-.testimonial em { display: block; margin-top: 6px; font-style: normal; font-weight: normal; }
-body.dark .testimonial { border-top: 1px solid rgba(255,255,255,0.06); color: #b7cdd0; }
+
+.testimonial em {
+  display: block;
+  margin-top: 10px;
+  font-style: normal;
+  font-weight: 500;
+  color: #6a7d84;
+}
+
+/* Match the accent line to each card’s theme */
+.value.ownership .testimonial { border-left-color: var(--ownership-light); }
+.value.relief    .testimonial { border-left-color: var(--relief-light); }
+.value.expertise .testimonial { border-left-color: var(--expertise-light); }
+
+/* Dark theme adjustments */
+body.dark .testimonial { color: #d0dee3; }
+body.dark .testimonial em { color: #9fb0b6; }
+body.dark .value.ownership .testimonial { border-left-color: var(--ownership-dark); }
+body.dark .value.relief    .testimonial { border-left-color: var(--relief-dark); }
+body.dark .value.expertise .testimonial { border-left-color: var(--expertise-dark); }
+
 
 /* Video */
 .video { margin: 48px auto 72px; text-align: center; }
@@ -127,7 +150,7 @@ body.dark .video-title { color: #cdd9dc; }
 
 .video-embed {
   position: relative;
-  width: clamp(280px, 80vw, 880px);  /* smaller, centered */
+  width: clamp(280px, 80vw, 880px);
   aspect-ratio: 16 / 9;
   margin: 0 auto;
   background: rgba(0,0,0,0.04);

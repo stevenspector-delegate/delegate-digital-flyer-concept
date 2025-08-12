@@ -7,14 +7,13 @@
 
 <link rel="icon" type="image/png" href="resources/Delegate_icon.png">
 
-<!-- Ensure browsers don't restore scroll on reload/back -->
+<!-- Prevent browsers from restoring scroll on reload/back -->
 <script>
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
   }
 </script>
 
-<!-- Inter Tight + Inter -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -26,12 +25,10 @@
 
 <div class="page">
   <header>
-    <!-- Same node used in intro animation -->
     <a href="https://delegate.team/" target="_blank" rel="noopener" class="main-logo-link" aria-label="Visit delegate.team">
       <img id="main-logo" class="main-logo fade-swap" src="resources/Delegate_logo_large.svg" alt="Delegate Logo">
     </a>
 
-    <!-- Same node used in intro animation -->
     <h1>Experience the difference.</h1>
 
     <p>We embed with your team to own outcomes, relieve pressure, and bring expertise — solving problems before they become problems.</p>
@@ -69,9 +66,13 @@
     </div>
   </section>
 
-  <!-- Video -->
+  <section class="promise-banner" aria-label="How we work">
+    <p class="promise-no">No SOWs • No tracking hours • No nickel &amp; diming • No BS</p>
+    <p class="promise-yes">Just <strong>good humans</strong> solving real problems.</p>
+  </section>
+
   <section class="video">
-    <h3 class="video-title">Don’t just take it from us — listen to what our clients have to say.</h3>
+    <h3 class="video-title">Don’t take it from us — listen to what our clients have to say.</h3>
     <div class="video-embed video-reveal" data-animate>
       <iframe
         src="https://www.youtube-nocookie.com/embed/hetBNgtKizw?rel=0"
